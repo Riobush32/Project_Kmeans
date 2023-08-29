@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.sidebar-button{
+    @apply w-[94%] h-14  rounded mx-[3%] hover:bg-base-200 my-3 duration-300 ease-in-out;
+}
