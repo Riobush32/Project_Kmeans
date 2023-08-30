@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ExcelController;
 use App\Http\Controllers\HasilController;
+use App\Http\Controllers\PrintController;
 use App\Http\Controllers\KmeansController;
 use App\Http\Controllers\IndustriController;
 
@@ -51,3 +52,6 @@ Route::get('/hasil', [HasilController::class, 'index']);
 Route::get('/hasil/iterasi', [HasilController::class, 'iterasi']);
 Route::get('hasil/akhir', [HasilController::class, 'hasilAkhir']);
 Route::get('hasil/chart', [HasilController::class, 'chart']);
+
+//Hasil Routes
+Route::get('print/hasil', [PrintController::class, 'index']);

@@ -7,7 +7,7 @@
     <div class="card-body ">
         <div class="md:flex md:flex-warp ">
             <div class="md:w-2/3 w-full">
-                <h2 class="card-title">Hasil Akhir</h2>
+                <h2 class="card-title">Hasil Akhir <a href="{{ url('print/hasil') }}" class="btn btn-outline btn-primary btn-sm">print</a></h2>
             </div>
 
             <div class="form-control">
