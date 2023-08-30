@@ -46,7 +46,8 @@ class KmeansController extends Controller
         $industri = dataPilihan::all();
 
          //ambil data centroid awal
-        $centroids = Centroid::where('iterasi', 0)->get();
+        $centroid = Centroid::where('iterasi', 0);
+        $centroids = $centroid->orderBy('total')->get(); 
 
         //proses mencari cluster function cluster
         $this->cluster($industri, $centroids);
@@ -111,6 +112,7 @@ class KmeansController extends Controller
         // $centroids = $data->random($request->kvalue);
         $centroids = $data->take($request->kvalue);
         $centroids->all();
+        // $centroids->orderBy('total', 'desc')->get();
 
         foreach ($centroids as $centroid)
         {
