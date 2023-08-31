@@ -43,6 +43,7 @@ class Cluster1Chart
             ->setSubtitle('Season '.$tahun)
             ->setWidth(350)
             ->setHeight(350)
+            ->setDataLabels(true)
             ->addData($clusterIndex)
             ->setLabels($clusterInfo);
     }

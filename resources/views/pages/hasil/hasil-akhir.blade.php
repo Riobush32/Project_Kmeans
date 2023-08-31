@@ -62,6 +62,21 @@
                             <th>{{ $no }}</th>
                             <td>{{ $item->kecamatan }}</td>
                             <td>Cluster {{ $item->index }}</td>
+                            <td>
+                                @switch($item->index)
+                                @case(1)
+                                <span class="text-rose-500 font-semibold">Sedikit</span>
+                                @break
+                                @case(2)
+                                <span class="text-amber-500 font-semibold">Sedang</span>
+                                @break
+                                @case(3)
+                                <span class="text-teal-500 font-semibold">Banyak</span>
+                                @break
+                                @default
+                                <span>Kategori Belum Diberikan</span>
+                                @endswitch
+                            </td>
                         </tr>
                         <?php $no++; ?>
 
@@ -79,7 +94,22 @@
 
                 </table>
 
-
+                <div class="p-6 m-20 rounded shadow-md">
+                    <span class="font-bold">Kesimpulan</span>
+                    <br><br>
+                    <?php $no = 1; ?>
+                    @foreach ($kesimpulan as $item1)
+                        <p>
+                            <span class="font-semibold">Cluster {{ $item1 }} adalah:</span> 
+                            <br>
+                            @foreach ($data->where('index', $item1) as $item)
+                                {{ $item->kecamatan }}, 
+                            @endforeach
+                            <br>
+                            <br>
+                        </p>
+                    @endforeach
+                </div>
             </div>
 
 

@@ -46,9 +46,9 @@ class KmeansController extends Controller
         $industri = dataPilihan::all();
 
          //ambil data centroid awal
-        $centroids = Centroid::where('iterasi', 0)->get();
-        // $centroid = Centroid::where('iterasi', 0);
-        // $centroids = $centroid->orderBy('total')->get(); 
+        // $centroids = Centroid::where('iterasi', 0)->get();
+        $centroid = Centroid::where('iterasi', 0);
+        $centroids = $centroid->orderBy('total')->get(); 
 
         //proses mencari cluster function cluster
         $this->cluster($industri, $centroids);
@@ -118,7 +118,6 @@ class KmeansController extends Controller
         foreach ($centroids as $centroid)
         {
             
-
             $dataBaru = new Centroid;
 
             $dataBaru->kecamatan = $centroid->kecamatan;
@@ -181,7 +180,7 @@ class KmeansController extends Controller
         for ($i=1; $i <= count($centroids); $i++) { 
             $join = Cluster::where('iterasi', $j)
                 ->where('index', $i)
-                ->join('data_industris', 'data_industris.id', '=', 'clusters.data_industri')->get();
+                ->join('data_pilihans', 'data_pilihans.id', '=', 'clusters.data_industri')->get();
             
             $berizin = $join->avg('berizin');
             $tidak_berizin = $join->avg('tidak_berizin');

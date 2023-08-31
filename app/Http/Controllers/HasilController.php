@@ -65,18 +65,19 @@ class HasilController extends Controller
         $iterasi = Cluster::distinct('iterasi')->pluck('iterasi')->toArray();
         $hasil = max($iterasi);
 
-
-        $viewData = Cluster::where('iterasi', $hasil)
+        $filterData = Cluster::where('iterasi', $hasil)
                     ->join('data_industris', 'data_industris.id', '=', 'clusters.data_industri')
-                    ->orderBy('index', 'asc')
-                    ->get();
+                    ->orderBy('index', 'asc');
 
-        
+        $index_akhir = Cluster::where('iterasi', $iterasi)->distinct('index')->orderBy('index')->pluck('index')->toArray();
+
+        $viewData = $filterData->get();
 
         return view('pages.hasil.hasil-akhir', [
             'data' => $viewData,
             'active' => 'hasil',
             'iterasi' => $iterasi,
+            'kesimpulan' => $index_akhir,
             'chart' => $chart->build(),
             'chartIndustri' => $chartIndustri->build(),
         ]);

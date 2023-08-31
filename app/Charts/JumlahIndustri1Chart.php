@@ -18,7 +18,12 @@ class JumlahIndustri1Chart
 
     public function build(): \ArielMejiaDev\LarapexCharts\HorizontalBar
     {
-        $data = dataPilihan::all();
+        // $data = dataPilihan::all();
+
+        $iterasi = Cluster::distinct('iterasi')->pluck('iterasi')->toArray();
+        $hasil = max($iterasi);
+        $data = Cluster::where('iterasi', $hasil)
+                ->join('data_pilihans', 'data_pilihans.id', '=', 'clusters.data_industri')->orderBy('index')->get();
 
         $berizin = array();
         $tidakBerizin = array();

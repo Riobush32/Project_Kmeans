@@ -30,7 +30,6 @@ class PrintController extends Controller
 
         return view('pages.hasil.print', [
             'data' => $viewData,
-            'active' => 'hasil',
             'iterasi' => $iterasi,
             'chart' => $chart->build(),
             'chartIndustri' => $chartIndustri->build(),
