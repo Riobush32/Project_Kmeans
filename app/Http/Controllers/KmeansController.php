@@ -174,6 +174,7 @@ class KmeansController extends Controller
         }
     }
 
+    //mencari centroid baru
     function avarageCluster($centroids, $iterasiAwal)
     {
         $j = $iterasiAwal;

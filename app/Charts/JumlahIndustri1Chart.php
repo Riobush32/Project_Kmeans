@@ -39,7 +39,7 @@ class JumlahIndustri1Chart
             ->setTitle('Data Industri')
             ->setSubtitle('Data Tahun '.$tahun)
             ->setColors(['#FFC107', '#D32F2F', '#4287f5'])
-            ->setHeight(1000)
+            ->setHeight(800)
             ->addData('Berizin', $berizin)
             ->addData('Tidak Berizin', $tidakBerizin)
             ->addData('Total', $total)
