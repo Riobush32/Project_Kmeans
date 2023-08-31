@@ -106,6 +106,7 @@
                         <th>No</th>
                         <th>Kecamatan</th>
                         <th>Cluster</th>
+                        <td>Keterangan</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -116,12 +117,48 @@
                         <th>{{ $no }}</th>
                         <td>{{ $item->kecamatan }}</td>
                         <td>Cluster {{ $item->index }}</td>
+                        <td>
+                            @switch($item->index)
+                            @case(1)
+                            <span style="color:rgb(190, 72, 72); font-weight:bold">Sedikit</span>
+                            @break
+                            @case(2)
+                            <span style="color:rgb(210, 148, 39); font-weight:bold">Sedang</span>
+                            @break
+                            @case(3)
+                            <span style="color:rgb(40, 177, 127); font-weight:bold">Banyak</span>
+                            @break
+                            @default
+                            <span>Kategori Belum Diberikan</span>
+                            @endswitch
+                        </td>
                     </tr>
                     <?php $no++; ?>
                     
                     @endforeach
                 </tbody>
             </table>
+        </div>
+
+        <div style="margin-top:30px;">
+            <span style="font-weight: bold; font-size:20px;">Kesimpulan</span>
+            <br><br>
+            <?php $no = 1; ?>
+            @foreach ($kesimpulan as $item1)
+            <p>
+                <span style="font-size:18px; font-weight:bold;">Cluster {{ $item1 }} adalah:</span>
+                <br>
+                @foreach ($data->where('index', $item1) as $item)
+                {{ $item->kecamatan }},
+                @endforeach
+                <br>
+            </p>
+            @endforeach
+        </div>
+
+        <div class="double-hr">
+            <div class="line"></div>
+            <div class="line"></div>
         </div>
 
         <div style="margin-top:20px;">
@@ -158,11 +195,11 @@
     var options = { year: 'numeric', month: 'long', day: 'numeric' };
     document.getElementById("currentDate").textContent = currentDate.toLocaleDateString('id-ID', options);
 
-    window.onload = function() {
-    setTimeout(function() {
-    window.print();
-    }, 1500); // 500 milidetik (5 detik)
-    };
+    // window.onload = function() {
+    // setTimeout(function() {
+    // window.print();
+    // }, 1500); // 500 milidetik (5 detik)
+    // };
 </script>
 
 </html>
