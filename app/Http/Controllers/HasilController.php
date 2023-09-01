@@ -69,7 +69,11 @@ class HasilController extends Controller
                     ->join('data_industris', 'data_industris.id', '=', 'clusters.data_industri')
                     ->orderBy('index', 'asc');
 
-        $index_akhir = Cluster::where('iterasi', $iterasi)->distinct('index')->orderBy('index')->pluck('index')->toArray();
+        $index_akhir = Cluster::where('iterasi', $iterasi)
+                        ->distinct('index')
+                        ->orderBy('index')
+                        ->pluck('index')
+                        ->toArray();
 
         $viewData = $filterData->get();
 

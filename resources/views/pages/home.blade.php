@@ -16,11 +16,11 @@
                     class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                     @guest
                     <li><a href="{{ route('login') }}">Sign-In</a></li>
-                    <li><a href="{{ route('register') }}">Sign-Up</a></li>
+                    {{-- <li><a href="{{ route('register') }}">Sign-Up</a></li> --}}
 
                     @else
                     @if (Auth::user()->role == 'superadmin')
-                    <li><a href="{{ url('/user') }}">User Data</a></li>
+                    {{-- <li><a href="{{ url('/user') }}">User Data</a></li> --}}
                     <li><a href="{{ url('/data/industri') }}">Proses</a></li>
 
                     @elseif (Auth::user()->role == 'admin')
@@ -48,13 +48,13 @@
             @guest
             <a href="{{ route('login') }}"
                 class="btn btn-outline btn-primary border-none mx-1 hidden md:flex">Sign-In</a>
-            <a href="{{ route('register') }}"
-                class="btn btn-outline btn-primary border-none mx-1 hidden md:flex">Sign-Up</a>
+            {{-- <a href="{{ route('register') }}"
+                class="btn btn-outline btn-primary border-none mx-1 hidden md:flex">Sign-Up</a> --}}
 
             @else
             @if (Auth::user()->role == 'superadmin')
-            <a href="{{ url('/user') }}" class="btn btn-outline btn-primary border-none mx-1 hidden md:flex">User
-                Data</a>
+            {{-- <a href="{{ url('/user') }}" class="btn btn-outline btn-primary border-none mx-1 hidden md:flex">User
+                Data</a> --}}
             <a href="{{ url('/data/industri') }}" class="btn btn-outline btn-primary border-none mx-1 hidden md:flex">Proses</a>
             @elseif (Auth::user()->role == 'admin')
             <a href="{{ url('/data/industri') }}" class="btn btn-outline btn-primary border-none mx-1 hidden md:flex">Proses</a>

@@ -53,7 +53,7 @@
                         <a href="{{ route('password.request') }}" class="link link-primary">Forgot Your Password?</a>
                     </div>
                     <div class="form-control pt-4">
-                        <a href="{{ route('register') }}" class="link link-primary">Don't have an account?</a>
+                        {{-- <a href="{{ route('register') }}" class="link link-primary">Don't have an account?</a> --}}
                     </div>
 
                     <div class="card-actions absolute bottom-5 right-5">
