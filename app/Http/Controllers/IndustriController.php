@@ -36,7 +36,7 @@ class IndustriController extends Controller
 
     public function truncate($tahun)
     {
-        DataIndustri::truncate();
+        DataIndustri::where('tahun', $tahun)->delete();
         return back()->with('delete', 'Di Hapus');
     }
 

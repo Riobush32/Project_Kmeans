@@ -120,13 +120,13 @@
                         <td>
                             @switch($item->index)
                             @case(1)
-                            <span style="color:rgb(190, 72, 72); font-weight:bold">Sedikit</span>
+                            <span style="color:rgb(190, 72, 72);">Jumlah IKM Rendah</span>
                             @break
                             @case(2)
-                            <span style="color:rgb(210, 148, 39); font-weight:bold">Sedang</span>
+                            <span style="color:rgb(210, 148, 39);">Jumlah IKM Sedang</span>
                             @break
                             @case(3)
-                            <span style="color:rgb(40, 177, 127); font-weight:bold">Banyak</span>
+                            <span style="color:rgb(40, 177, 127);">Jumlah IKM Tinggi</span>
                             @break
                             @default
                             <span>Kategori Belum Diberikan</span>
@@ -172,11 +172,11 @@
     </div>
 
     <div class="signature">
-            <p>An. KEPALA DINAS,</p>
-            <p style="margin-bottom: 70px">Kabid Perindustrian</p>
-            <p>KAMALUDDIN, S.E, M.Si</p>
-            <p>NIP.197909172009041006</p>
-        </div>
+        <p>An. KEPALA DINAS,</p>
+        <p style="margin-bottom: 70px">Kabid Perindustrian</p>
+        <p>KAMALUDDIN, S.E, M.Si</p>
+        <p>NIP.197909172009041006</p>
+    </div>
 
         <p>Tanggal: <span id="currentDate"></span></p>
 </body>

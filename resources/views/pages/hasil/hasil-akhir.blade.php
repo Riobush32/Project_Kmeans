@@ -38,12 +38,7 @@
             
             
             <div class="overflow-x-auto h-[430px]">
-                <div class="p-6 m-20 rounded shadow-md">
-                    {!! $chart->container() !!}
-                </div>
-                <div class="p-6 m-20 rounded shadow-md">
-                    {!! $chartIndustri->container() !!}
-                </div>
+                
                 <table class="table table-compact w-full">
 
                     <thead>
@@ -51,7 +46,7 @@
                             <th></th>
                             <th>Kecamatan</th>
                             <th>Cluster</th>
-                            <th></th>
+                            <th>Keterangan</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -65,13 +60,13 @@
                             <td>
                                 @switch($item->index)
                                 @case(1)
-                                <span class="text-rose-500 font-semibold">Sedikit</span>
+                                <span class="text-rose-500 font-semibold">Jumlah IKM Rendah</span>
                                 @break
                                 @case(2)
-                                <span class="text-amber-500 font-semibold">Sedang</span>
+                                <span class="text-amber-500 font-semibold">Jumlah IKM Sedang</span>
                                 @break
                                 @case(3)
-                                <span class="text-teal-500 font-semibold">Banyak</span>
+                                <span class="text-teal-500 font-semibold">Jumlah IKM Tinggi</span>
                                 @break
                                 @default
                                 <span>Kategori Belum Diberikan</span>
@@ -93,6 +88,13 @@
                     </tfoot>
 
                 </table>
+
+                <div class="p-6 m-20 rounded shadow-md">
+                    {!! $chart->container() !!}
+                </div>
+                <div class="p-6 m-20 rounded shadow-md">
+                    {!! $chartIndustri->container() !!}
+                </div>
 
                 <div class="p-6 m-20 rounded shadow-md">
                     <span class="font-bold">Kesimpulan</span>

@@ -45,12 +45,9 @@
                     <thead>
                         <tr>
                             <th></th>
-                            <th>Kecamatan</th>
                             <th>BerIzin</th>
                             <th>Tidak Berizin</th>
                             <th>Total</th>
-                            <th>Tahun</th>
-                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -59,11 +56,9 @@
                 
                         <tr>
                             <th>{{ $no }}</th>
-                            <td>{{ $item->kecamatan }}</td>
                             <td>{{ $item->berizin }}</td>
                             <td>{{ $item->tidak_berizin }}</td>
                             <td>{{ $item->total }}</td>
-                            <td>{{ $item->tahun }}</td>
                         </tr>
                         <?php 
                                             $no++; 
@@ -77,12 +72,9 @@
                     <tfoot>
                         <tr>
                             <th></th>
-                            <th>Kecamatan</th>
                             <th>BerIzin</th>
                             <th>Tidak Berizin</th>
                             <th>Total</th>
-                            <th>Tahun</th>
-                            <th></th>
                         </tr>
                     </tfoot>
                 

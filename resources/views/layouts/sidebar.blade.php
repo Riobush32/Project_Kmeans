@@ -56,7 +56,7 @@
             </div>
         </a>
 
-        <a href="{{ url('/hasil') }}" class="sidebar-button items-center flex {{ $active == 'hasil' ? 'bg-primary' : '' }}">
+        <a href="{{ url('/hasil/iterasi') }}" class="sidebar-button items-center flex {{ $active == 'hasil' ? 'bg-primary' : '' }}">
             <div class="ml-5 items-center flex text-sm">
                 <span class="material-symbols-sharp">
                     assignment_turned_in

@@ -22,7 +22,7 @@ class HasilController extends Controller
         $cluster = Cluster::where('iterasi', 1)->get();
 
         return view('pages.hasil.index',[
-            'active' => 'hasil',
+            'active' => 'Kmeans',
             'data' => $centroid,
             'cluster' => $cluster
         ]);

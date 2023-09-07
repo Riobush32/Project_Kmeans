@@ -26,6 +26,18 @@ class KmeansController extends Controller
         ]);
     }
 
+    public function tampilCentroid()
+    {
+        $centroid = Centroid::where('iterasi', 0)->orderBy('total', 'asc')->get();
+        $cluster = Cluster::where('iterasi', 1)->get();
+
+        return view('pages.hasil.index',[
+            'active' => 'hasil',
+            'data' => $centroid,
+            'cluster' => $cluster
+        ]);
+    }
+
     //hapus data pilihan
     public function truncate()
     {
