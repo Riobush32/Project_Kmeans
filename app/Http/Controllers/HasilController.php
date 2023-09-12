@@ -28,6 +28,7 @@ class HasilController extends Controller
         ]);
     }
 
+    
     public function iterasi(Request $request)
     {
         //variable untuk menampilkan data yang ingin di filter
@@ -36,14 +37,14 @@ class HasilController extends Controller
         $count = Centroid::where('iterasi', 0)->count();
         //variable hasil dari pengulangan pertama
         $viewData = Cluster::where('iterasi', 0)
-                    ->join('data_industris', 'data_industris.id', '=', 'clusters.data_industri')
+                    ->join('data_pilihans', 'data_pilihans.id', '=', 'clusters.data_industri')
                     ->get();
         $iterasiKe = 0;
         $centroid = Centroid::where('iterasi', 0)->get();
         if($request->iterasi)
         {
             $viewData = Cluster::where('iterasi', $request->iterasi)
-                    ->join('data_industris', 'data_industris.id', '=', 'clusters.data_industri')
+                    ->join('data_pilihans', 'data_pilihans.id', '=', 'clusters.data_industri')
                     ->get();
             $iterasiKe = $request->iterasi;
         $centroid = Centroid::where('iterasi', $request->iterasi)->get();

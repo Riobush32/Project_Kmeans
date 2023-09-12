@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DbiController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ExcelController;
 use App\Http\Controllers\HasilController;
@@ -22,6 +23,7 @@ use App\Http\Controllers\IndustriController;
 Route::get('/', function () {
     return view('pages.home');
 });
+// Route::get('/test', [DbiController::class, 'dbi']);
 
 //user routes
 

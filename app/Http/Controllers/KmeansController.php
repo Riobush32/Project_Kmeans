@@ -17,7 +17,7 @@ class KmeansController extends Controller
 
     public function index()
     {
-        $data = dataPilihan::all();
+        $data = dataPilihan::orderBy('kecamatan')->get();
     
 
         return view('pages.kmeans.index', [
