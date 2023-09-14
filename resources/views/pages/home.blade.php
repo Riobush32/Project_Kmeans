@@ -39,7 +39,7 @@
                 </ul>
             </div>
 
-            <a class="btn btn-ghost normal-case text-xl">Diskopdagin</a>
+            <a class="btn btn-ghost normal-case text-xl">Dinas  Koperasi Perdagangan dan Perindustrian</a>
         </div>
 
 
@@ -83,7 +83,7 @@
 <div class="hero min-h-screen bg-base-200 bg-[url('../../../public/img/industri.png')]">
     <div class="hero-content text-center bg-slate-900 bg-opacity-30 rounded-2xl">
         <div class="w-[90vw] p-10">
-            <h1 class="text-5xl font-bold text-slate-100">Selamat Datang di Website </h1>
+            <h1 class="text-5xl font-bold text-slate-100">Profil Instansi</h1>
             <p class="py-6 text-slate-200">
                 Terhitung mulai 2 Januari 2014 Dinas Koperasi dan UMKM Kabupaten Asahan merger dengan Dinas Perindustrian dan
                 Perdagangan Kabupaten Asahan Menjadi Dinas Koperasi Perindustrian dan Perdagangan Kabupaten Asahan.

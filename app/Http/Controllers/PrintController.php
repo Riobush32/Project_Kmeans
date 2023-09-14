@@ -20,7 +20,7 @@ $iterasi = Cluster::distinct('iterasi')->pluck('iterasi')->toArray();
         $hasil = max($iterasi);
 
         $filterData = Cluster::where('iterasi', $hasil)
-                    ->join('data_industris', 'data_industris.id', '=', 'clusters.data_industri')
+                    ->join('data_pilihans', 'data_pilihans.id', '=', 'clusters.data_industri')
                     ->orderBy('index', 'asc');
 
         $index_akhir = Cluster::where('iterasi', $iterasi)->distinct('index')->orderBy('index')->pluck('index')->toArray();

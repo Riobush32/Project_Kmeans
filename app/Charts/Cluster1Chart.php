@@ -27,7 +27,7 @@ class Cluster1Chart
         $clusterInfo = array();
         foreach ($loop as $key => $value) {
             $cluster = Cluster::where('iterasi', $hasil)
-                                ->join('data_industris', 'data_industris.id', '=', 'clusters.data_industri')
+                                ->join('data_pilihans', 'data_pilihans.id', '=', 'clusters.data_industri')
                                 ->where('index', $i+1)
                                 ->get();
             $clusterIndex[$i] = $cluster->count();

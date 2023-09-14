@@ -57,3 +57,12 @@ Route::get('hasil/chart', [HasilController::class, 'chart']);
 
 //Hasil Routes
 Route::get('print/hasil', [PrintController::class, 'index']);
+
+//dbi Routes
+Route::get('dbi/s', [DbiController::class, 'nilaiS']);
+Route::get('dbi/m', [DbiController::class, 'nilaiM']);
+Route::get('dbi/r', [DbiController::class, 'nilaiR']);
+Route::get('dbi', [DbiController::class, 'dbi']);
+
+
+
