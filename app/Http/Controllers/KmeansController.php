@@ -8,6 +8,7 @@ use App\Models\dataPilihan;
 use App\Models\DataIndustri;
 use Illuminate\Http\Request;
 
+
 class KmeansController extends Controller
 {
     public function __construct(){
@@ -111,7 +112,7 @@ class KmeansController extends Controller
 
         }
 
-        return redirect('/hasil/iterasi');
+        return redirect('/dbi');
         
     }
 

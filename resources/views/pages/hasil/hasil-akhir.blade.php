@@ -89,6 +89,16 @@
 
                 </table>
 
+                {{-- nilai dbi  --}}
+                <div class="p-6 m-20 rounded shadow-md">
+                    <span class="font-bold">Davies-Bouldin Index</span>
+                    @foreach ($dbi as $value)
+                    <p>
+                        Nilai DBI adalah {{ number_format($value->dbi,3) }}
+                    </p>
+                    @endforeach
+                </div>
+
                 <div class="p-6 m-20 rounded shadow-md">
                     {!! $chart->container() !!}
                 </div>
@@ -112,6 +122,8 @@
                         </p>
                     @endforeach
                 </div>
+
+                
             </div>
 
 

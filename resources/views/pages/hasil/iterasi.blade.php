@@ -106,9 +106,9 @@
                             <td>{{ $item->kecamatan }}</td>
                             @for ($i = 1; $i <= $count; $i++) 
                                 <?php $c = 'c'.$i; ?>
-                                <td>{{ $item->$c }}</td>
+                                <td>{{ number_format($item->$c, 4) }}</td>
                             @endfor
-                            <td>{{ $item->cluster }}</td>
+                            <td>{{ number_format($item->cluster,4) }}</td>
                             <td>{{ $item->index }}</td>
                         </tr>
                         <?php $no++; ?>

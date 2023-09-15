@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\dbi;
 use App\Models\Cluster;
 use App\Models\Centroid;
 use Illuminate\Http\Request;
@@ -85,6 +86,7 @@ class HasilController extends Controller
             'kesimpulan' => $index_akhir,
             'chart' => $chart->build(),
             'chartIndustri' => $chartIndustri->build(),
+            'dbi' => dbi::all()
         ]);
 
     }

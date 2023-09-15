@@ -23,7 +23,9 @@ use App\Http\Controllers\IndustriController;
 Route::get('/', function () {
     return view('pages.home');
 });
-// Route::get('/test', [DbiController::class, 'dbi']);
+Route::get('/test', function (){
+   
+});
 
 //user routes
 
@@ -55,7 +57,7 @@ Route::get('/hasil/iterasi', [HasilController::class, 'iterasi']);
 Route::get('hasil/akhir', [HasilController::class, 'hasilAkhir']);
 Route::get('hasil/chart', [HasilController::class, 'chart']);
 
-//Hasil Routes
+//print Routes
 Route::get('print/hasil', [PrintController::class, 'index']);
 
 //dbi Routes

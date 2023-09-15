@@ -39,6 +39,11 @@
                 </ul>
             </div>
 
+            <div class="avatar ml-2">
+                <div class="w-10 ">
+                    <img src="{{ asset('img/kabasahan.png') }}" alt="Tailwind-CSS-Avatar-component" />
+                </div>
+            </div>
             <a class="btn btn-ghost normal-case text-xl">Dinas  Koperasi Perdagangan dan Perindustrian</a>
         </div>
 
@@ -80,7 +85,7 @@
     </div>
 </div>
 
-<div class="hero min-h-screen bg-base-200 bg-[url('../../../public/img/industri.png')]">
+<div class="hero min-h-screen bg-base-200 bg-[url('../../../public/img/diskopdagin.jpg')]">
     <div class="hero-content text-center bg-slate-900 bg-opacity-30 rounded-2xl">
         <div class="w-[90vw] p-10">
             <h1 class="text-5xl font-bold text-slate-100">Profil Instansi</h1>

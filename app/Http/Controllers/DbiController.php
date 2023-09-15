@@ -19,6 +19,7 @@ class DbiController extends Controller
 
     public function dbi()
     {
+        dbi::truncate();
         // Mencari Iterasi Terakhir  
         $DataInterasi = Centroid::distinct('iterasi')->pluck('iterasi')->toArray();
         $iterasi = max($DataInterasi);
@@ -39,6 +40,8 @@ class DbiController extends Controller
             'iterasi' => $iterasi-1,
             'dbi' => $dbi
         ]);
+
+        return redirect('/hasil/iterasi');
         
     }
 
