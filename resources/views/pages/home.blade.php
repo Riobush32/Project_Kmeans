@@ -84,9 +84,9 @@
 
     </div>
 </div>
-
-<div class="hero min-h-screen bg-base-200 bg-[url('../../../public/img/diskopdagin.jpg')]">
-    <div class="hero-content text-center bg-slate-900 bg-opacity-30 rounded-2xl">
+<img src="{{ asset('img/diskopdagin.jpg') }}" alt="Industri" class="absolute z-[-1] h-[100vh] w-[100vw]">
+<div class="hero min-h-screen ">
+    <div class="hero-content text-center bg-slate-900 bg-opacity-40 rounded-2xl">
         <div class="w-[90vw] p-10">
             <h1 class="text-5xl font-bold text-slate-100">Profil Instansi</h1>
             <p class="py-6 text-slate-200">
