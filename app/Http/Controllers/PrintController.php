@@ -16,7 +16,7 @@ class PrintController extends Controller
 
     public function index(Cluster1Chart $chart, JumlahIndustri1Chart $chartIndustri)
     {
-$iterasi = Cluster::distinct('iterasi')->pluck('iterasi')->toArray();
+        $iterasi = Cluster::distinct('iterasi')->pluck('iterasi')->toArray();
         $hasil = max($iterasi);
 
         $filterData = Cluster::where('iterasi', $hasil)

@@ -35,6 +35,19 @@
         </div>
 
         <div class="h-full mt-8">
+            @if ($centroid->isEmpty())
+            <div class="hero bg-transparent overflow-x-auto mt-16">
+                <div class="hero-content text-center">
+                    <div class="max-w-md">
+                        <h1 class="text-5xl font-bold">Warning!</h1>
+                        <p class="py-6">Tidak ada data yang dipilih untuk diproses, Silahkan tekan tombol berikut untuk memilih data
+                            yang akan diproses</p>
+                        <a href="{{ url('/data/industri/') }}" class="btn btn-primary">Pilih Data</a>
+                    </div>
+                </div>
+            </div>
+            
+            @else
             
             <div class="overflow-x-auto">
                 <div class="mt-3 font-semibold">
@@ -47,7 +60,6 @@
                             <th></th>
                             <th>BerIzin</th>
                             <th>Tidak Berizin</th>
-                            <th>Total</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -58,7 +70,6 @@
                             <th>{{ $no }}</th>
                             <td>{{ $item->berizin }}</td>
                             <td>{{ $item->tidak_berizin }}</td>
-                            <td>{{ $item->total }}</td>
                         </tr>
                         <?php 
                                             $no++; 
@@ -74,7 +85,6 @@
                             <th></th>
                             <th>BerIzin</th>
                             <th>Tidak Berizin</th>
-                            <th>Total</th>
                         </tr>
                     </tfoot>
                 
@@ -132,9 +142,8 @@
                     </tfoot>
                 </table>
 
-
             </div>
-
+@endif
         </div>
     </div>
 </div>

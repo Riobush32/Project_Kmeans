@@ -89,14 +89,156 @@
 
                 </table>
 
-                {{-- nilai dbi  --}}
+                {{-- nilai SSW  --}}
                 <div class="p-6 m-20 rounded shadow-md">
-                    <span class="font-bold">Davies-Bouldin Index</span>
-                    @foreach ($dbi as $value)
-                    <p>
-                        Nilai DBI adalah {{ number_format($value->dbi,3) }}
-                    </p>
-                    @endforeach
+                    <span class="font-bold">SSW</span>
+                    
+                        <table class="table table-compact w-full mb-10">
+                    
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Centroid</th>
+                                    <th>SSW</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php $no = 1; ?>
+                                @foreach($ssw as $item)
+                    
+                                <tr>
+                                    <th>{{ $no }}</th>
+                                    <td>{{ $item->centroid }}</td>
+                                    <td>{{ number_format($item->nilai_s, 3) }}</td>
+                                </tr>
+                                <?php $no++; ?>
+                    
+                                @endforeach
+                    
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th></th>
+                                    <th>Centroid</th>
+                                    <th>SSW</th>
+                                    <th></th>
+                                </tr>
+                            </tfoot>
+                    
+                        </table>
+
+                        {{-- nilai ssb --}}
+
+                        <span class="font-bold">SSB</span>
+                        
+                        <table class="table table-compact w-full mb-10">
+                        
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Inisialisasi</th>
+                                    <th>SSB</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php $no = 1; ?>
+                                @foreach($ssb as $item)
+                        
+                                <tr>
+                                    <th>{{ $no }}</th>
+                                    <td>{{ $item->inisialisasi }}</td>
+                                    <td>{{ number_format($item->nilai_m, 3) }}</td>
+                                </tr>
+                                <?php $no++; ?>
+                        
+                                @endforeach
+                        
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th></th>
+                                    <th>Inisialisasi</th>
+                                    <th>SSB</th>
+                                    <th></th>
+                                </tr>
+                            </tfoot>
+                        
+                        </table>
+
+                        {{-- nilai rasio --}}
+                        
+                        <span class="font-bold">Rasio</span>
+                        
+                        <table class="table table-compact w-full mb-10">
+                        
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Centroid</th>
+                                    <th>SSB</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php $no = 1; ?>
+                                @foreach($rasio as $item)
+                        
+                                <tr>
+                                    <th>{{ $no }}</th>
+                                    <td>{{ $item->centroid }}</td>
+                                    <td>{{ number_format($item->nilai_r, 3) }}</td>
+                                </tr>
+                                <?php $no++; ?>
+                        
+                                @endforeach
+                        
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th></th>
+                                    <th>centroid</th>
+                                    <th>nilai_r</th>
+                                    <th></th>
+                                </tr>
+                            </tfoot>
+                        
+                        </table>
+                    
+                        {{-- nilai dbi --}}
+                        <div class="p-6 m-20 rounded shadow-md">
+                            <span class="font-bold">Davies-Bouldin Index</span>
+                            @foreach ($dbi as $value)
+                            <p>
+                                Nilai DBI adalah {{ number_format($value->dbi,3) }}
+                            </p>
+                            @endforeach
+                        </div>
+                    
+                        <div class="p-6 m-20 rounded shadow-md">
+                            {!! $chart->container() !!}
+                        </div>
+                        <div class="p-6 m-20 rounded shadow-md">
+                            {!! $chartIndustri->container() !!}
+                        </div>
+                    
+                        <div class="p-6 m-20 rounded shadow-md">
+                            <span class="font-bold">Kesimpulan</span>
+                            <br><br>
+                            <?php $no = 1; ?>
+                            @foreach ($kesimpulan as $item1)
+                            <p>
+                                <span class="font-semibold">Cluster {{ $item1 }} adalah:</span>
+                                <br>
+                                @foreach ($data->where('index', $item1) as $item)
+                                {{ $item->kecamatan }},
+                                @endforeach
+                                <br>
+                                <br>
+                            </p>
+                            @endforeach
+                        </div>
+                    
+                    
+                    </div>
                 </div>
 
                 <div class="p-6 m-20 rounded shadow-md">

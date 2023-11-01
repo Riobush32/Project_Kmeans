@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\dbi;
+use App\Models\Ssw;
+use App\Models\NilaiM;
+use App\Models\NilaiR;
+use App\Models\NilaiS;
 use App\Models\Cluster;
 use App\Models\Centroid;
 use Illuminate\Http\Request;
@@ -86,7 +90,10 @@ class HasilController extends Controller
             'kesimpulan' => $index_akhir,
             'chart' => $chart->build(),
             'chartIndustri' => $chartIndustri->build(),
-            'dbi' => dbi::all()
+            'dbi' => dbi::all(),
+            'ssw' => NilaiS::all(),
+            'ssb' => NilaiM::all(),
+            'rasio' => NilaiR::all(),
         ]);
 
     }

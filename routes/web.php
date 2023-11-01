@@ -67,4 +67,7 @@ Route::get('dbi/r', [DbiController::class, 'nilaiR']);
 Route::get('dbi', [DbiController::class, 'dbi']);
 
 
+Route::get('dbi/ssw', [DbiController::class, 'ssw']);
+
+
 

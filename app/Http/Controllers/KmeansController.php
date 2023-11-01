@@ -43,6 +43,8 @@ class KmeansController extends Controller
     public function truncate()
     {
         dataPilihan::truncate();
+        Cluster::truncate();
+        Centroid::truncate();
 
         return back();
     }
@@ -91,6 +93,7 @@ class KmeansController extends Controller
             $centroidAwal = Cluster::where('iterasi', $iterasi-1)->select('index')->get();
             $centroidAkhir = Cluster::where('iterasi', $iterasi)->select('index')->get();
 
+            //check
             $check = array();
             $check = [];
             for ($i=0; $i < count($centroidAwal); $i++) { 
@@ -159,8 +162,7 @@ class KmeansController extends Controller
             {
                 $sum = sqrt(
                                 pow(($data->berizin)-($centroid->berizin), 2)+
-                                pow(($data->tidak_berizin)-($centroid->tidak_berizin), 2)+
-                                pow(($data->total)-($centroid->total), 2)
+                                pow(($data->tidak_berizin)-($centroid->tidak_berizin), 2)
                             );  
                 $k_nilai[] = $sum;
                 $i++;
